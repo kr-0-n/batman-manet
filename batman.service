@@ -5,7 +5,7 @@ After=systemd-user-sessions.service
  
 [Service]
 Type=forking
-ExecStart=/home/pi/batman-manet/config_batman.sh $(cat /home/pi/ip_addr)
+ExecStart=/bin/bash -c "/home/pi/batman-manet/config_batman.sh $(cat /home/pi/ip_addr)"
 TimeoutSec=30
 Restart=on-failure
 RestartSec=30
