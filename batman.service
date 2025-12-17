@@ -1,0 +1,16 @@
+[Unit]
+Description=Config and start batman
+After=network.target
+After=systemd-user-sessions.service
+ 
+[Service]
+Type=forking
+ExecStart=/home/pi/batman-manet/config_batman.sh $(cat /home/pi/ip_addr)
+TimeoutSec=30
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=350
+StartLimitBurst=10
+ 
+[Install]
+WantedBy=multi-user.target
