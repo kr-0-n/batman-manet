@@ -1,4 +1,9 @@
 #!/usr/bin/env -S uv run --script
+#
+# /// script
+# requires-python = ">=3.12"
+# dependencies = ["scapy"]
+# ///
 import socket
 import scapy.all
 import subprocess
