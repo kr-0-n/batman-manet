@@ -5,6 +5,11 @@
     name: dnsmasq
     state: present
 
+- name: Install systemd-resolved
+  ansible.builtin.apt:
+    name: systemd-resolved
+    state: present
+
 - name: Deploy dnsmasq config
   ansible.builtin.template:
     src: "{{ playbook_dir }}/templates/dnsmasq.conf.j2"
